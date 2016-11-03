@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="com.obtaine.canonir" version="0.0.1" xmlns="http://www.phonegap.com/ns/plugins/1.0">
+    <name>Canon IR</name>
+    <description>Canon IR Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>IR,infrared,canon,dslr</keywords>
+
+
+    <js-module name="CanonIr" src="www/canonir.js">
+        <clobbers target="window.ir" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="CanonIr">
+                <param name="android-package" value="com.obtaine.canonir.CanonIr" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/CanonIr.java" target-dir="src/obtaine/canonir/" />
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.TRANSMIT_IR"
+                android:required="false" />
+            <uses-feature android:name="android.hardware.consumerir" />
+        </config-file>
+    </platform>
+</plugin>
