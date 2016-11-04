@@ -7,7 +7,7 @@
     <keywords>IR,infrared,canon,dslr</keywords>
 
 
-    <js-module name="CanonIr" src="www/canonir.js">
+    <js-module name="CanonIr" src="www/CanonIr.js">
         <clobbers target="window.ir" />
     </js-module>
 
